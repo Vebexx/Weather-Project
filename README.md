@@ -32,10 +32,10 @@
 
 - ⏱ **Reaaliaikainen kello ja teema**:  
   - Päivä/näköyön mukaan vaihtuva tausta ja ikonit  
-  - Kello päivittyy sekunnin tarkkuudella  
+  - Kello päivittyy minuutin tarkkuudella  
 
 - 📄 **JSON-kaupunkilista**:  
-  - Kaikki Suomen kaupungit haetaan `cities.json` tiedostosta  
+  - Kaikki Suomen kaupungit haetaan `finnishCities.json` tiedostosta  
   - Helppo lisätä uusia kaupunkeja  
 
 - 📱 **Responsiivinen layout (TailwindCSS)**:  
@@ -44,7 +44,8 @@
 
 - ⚡ **Reaaliaikainen päivitys ja optimointi**:  
   - React Query huolehtii datan refetchistä  
-  - Refetch 15 sekunnin välein, live-data popupissa  
+  - Refetch 15 sekunnin välein, live-data popupissa
+  - Manuaalinen päivitys nappi jos haluat itse päivittää sään  
 
 ---
 
