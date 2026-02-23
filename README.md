@@ -1,16 +1,73 @@
-# React + Vite
+# 🌤 WeatherMap — Live Weather App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**WeatherMap** on interaktiivinen ja responsiivinen React-sovellus, joka näyttää Suomen kaupunkien sään reaaliajassa. Sovelluksessa yhdistyvät kartta, reaaliaikainen säädata ja käyttäjäystävällinen hakukenttä, ja se on rakennettu täysin ilmaisilla työkaluilla ja API:lla.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Ominaisuudet
 
-## React Compiler
+- 🌐 **Live-sää Suomessa**:  
+  - Nykyinen lämpötila  
+  - Säätila (selkeää, pilvistä, sadetta, lumisadetta, ukkosmyrsky)  
+  - Tuulen nopeus (km/h)  
+  - Päivä/yö-teema säätietojen mukaan
+  - Viikon sääennuste perustuen sijaintisi säähän  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🗺 **Interaktiivinen kartta (Leaflet)**:  
+  - Markerit eri kaupungeille  
+  - Popupit lämpötilalla ja sääikoneilla  
+  - FlyTo-animaatio hakukentän kautta haettaessa  
+  - Käyttäjän sijaintimarkeri  
+  - Zoom (+/-) ja scrollWheelZoom tuettu  
 
-## Expanding the ESLint configuration
+- 🔍 **Hakukenttä / Autocomplete**:  
+  - Ehdottaa kaupunkeja JSON-listasta kirjainten mukaan  
+  - Virheilmoitus, jos kaupunkia ei löydy  
+  - FlyTo-animaatio vie kartan haluttuun kaupunkiin  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🎨 **Custom markerit ja visualisointi**:  
+  - Lämpötilan mukaan väritetyt markerit  
+  - Sääikoni popupissa (WiDaySunny, WiCloudy, WiRain jne.)  
+  - Smooth animaatiot markerien päivitykselle  
+
+- ⏱ **Reaaliaikainen kello ja teema**:  
+  - Päivä/näköyön mukaan vaihtuva tausta ja ikonit  
+  - Kello päivittyy sekunnin tarkkuudella  
+
+- 📄 **JSON-kaupunkilista**:  
+  - Kaikki Suomen kaupungit haetaan `cities.json` tiedostosta  
+  - Helppo lisätä uusia kaupunkeja  
+
+- 📱 **Responsiivinen layout (TailwindCSS)**:  
+  - Mobile-first  
+  - Kortti- ja karttanäkymä mukautuu eri näyttökokoihin  
+
+- ⚡ **Reaaliaikainen päivitys ja optimointi**:  
+  - React Query huolehtii datan refetchistä  
+  - Refetch 15 sekunnin välein, live-data popupissa  
+
+---
+
+## 🛠 Teknologiat
+
+- **React** – komponenttipohjainen käyttöliittymä  
+- **Leaflet** – interaktiivinen kartta ja markerit  
+- **Framer Motion** – smooth animaatiot  
+- **TailwindCSS** – responsiivinen ja moderni layout  
+- **React Query** – datafetch ja cache optimointi  
+- **Open-Meteo API** – ilmainen säädata  
+- **JSON** – kaupungit ja koordinaatit  
+- **React Icons** – sääikonit Wi-sarjasta  
+
+---
+
+## 📁 Projektin rakenne
+
+```text
+src/
+├─ components/
+│  └─ WeatherMap.jsx   # Kartta, hakukenttä, markerit ja popupit
+├─ data/
+│  └─ cities.json      # Lista Suomen kaupungeista ja koordinaateista
+├─ App.jsx             # Sovelluksen pääkomponentti
+├─ main.jsx            # React-sovelluksen renderöinti
